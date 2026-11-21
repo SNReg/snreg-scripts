@@ -1,0 +1,6 @@
+name = "ssh-root-login"
+version = "0.1.0"
+description = "Disable direct root login over SSH and reload sshd"
+distros = ["debian", "ubuntu", "fedora", "rhel", "arch"]
+requires_root = true
+timeout_s = 30
