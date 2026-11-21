@@ -1,0 +1,15 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y lua-check shellcheck lua5.4
+      - run: luacheck detect ci
+      - run: shellcheck remediate/*/script.sh
+      - run: lua5.4 ci/test-detect.lua

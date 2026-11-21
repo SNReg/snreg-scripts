@@ -1,0 +1,7 @@
+name = "ssh-root-login"
+version = "0.1.0"
+description = "Direct root login over SSH is disabled (PermitRootLogin no)"
+distros = ["debian", "ubuntu", "fedora", "rhel", "arch"]
+requires_root = true
+timeout_s = 10
+remediation = "ssh-root-login"
